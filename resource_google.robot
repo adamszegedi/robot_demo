@@ -1,5 +1,6 @@
 *** Settings ***
 Library        SeleniumLibrary
+Library            ./robot_extension.py
 
 *** Keywords ***
 Search For ${keyword}

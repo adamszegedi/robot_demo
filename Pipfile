@@ -8,6 +8,8 @@ robotframework = "*"
 robotframework-seleniumlibrary = "*"
 
 [dev-packages]
+"flake8" = "*"
+pylint = "*"
 
 [requires]
 python_version = "3.7"
