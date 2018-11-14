@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     Open Google and Wait just for testing purpose.
 
-Default Tags    google    bulldog
+Force Tags    google    bulldog
 Resource    ./resource_google.robot
 Suite Setup    Run Keyword  Open Browser    http://www.google.com  browser=chrome
 Test Setup    Run Keyword  Log To Console  ${\n} Test Setup Message
@@ -10,6 +10,7 @@ Suite Teardown    Close Browser
 
 *** Test Cases ***
 Open Google Test 1
+    [Tags]    CALC-1    CALC-2
     Open Google Images
     Search For French Bulldogs
     Capture Page Screenshot
@@ -21,6 +22,7 @@ Open Google Test 2
     Sleep    3
 
 Open Google Test 3
+    [Tags]   CALC-3
     Open Google Images
     Search For French Fries
     Fail  msg=Ooops something went wrong!
