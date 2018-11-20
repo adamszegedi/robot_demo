@@ -9,4 +9,4 @@ Search For ${keyword}
     Click Element  xpath://button[@type='submit']
 
 Open Google Images
-    Click Element  xpath://*[text()='Images']
+    Click Element  xpath://*[text()='Képek']
