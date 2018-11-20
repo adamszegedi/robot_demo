@@ -9,6 +9,12 @@ Test Teardown   Run Keyword  Log To Console  ${\n} Test Teardown Message ${\n}
 Suite Teardown    Close Browser
 
 *** Test Cases ***
+FakerLibrary Words Generation
+    ${words}=    FakerLibrary.Words
+    Log    words: ${words}
+    ${words}=    FakerLibrary.Words    nb=${10}
+    Log    words: ${words}
+
 Open Google Test 1
     [Tags]    CALC-1    CALC-2
     Open Google Images

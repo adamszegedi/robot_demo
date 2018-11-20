@@ -1,5 +1,6 @@
 *** Settings ***
 Library        SeleniumLibrary
+Library        FakerLibrary
 Library            ./robot_extension.py
 
 *** Keywords ***
