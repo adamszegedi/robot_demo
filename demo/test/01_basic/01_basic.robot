@@ -1,12 +1,9 @@
 *** Settings ***
-Documentation     Open Google and Wait just for testing purpose.
+Documentation     Basic Usage Examples
 
-Force Tags    google    bulldog
-Resource    ./google.resource
-Suite Setup    Run Keyword  Open Browser    http://www.google.com  browser=chrome
-Test Setup    Run Keyword  Log To Console  ${\n} Test Setup Message
-Test Teardown   Run Keyword  Log To Console  ${\n} Test Teardown Message ${\n}
-Suite Teardown    Close Browser
+Force Tags    basic
+Resource    ${EXECDIR}/demo/resource/general.robot
+
 
 *** Test Cases ***
 FakerLibrary Words Generation
@@ -15,24 +12,6 @@ FakerLibrary Words Generation
     ${words}=    FakerLibrary.Words    nb=${10}
     Log    words: ${words}
 
-Open Google Test 1
-    [Tags]    CALC-1    CALC-2
-    Open Google Images
-    Search For French Bulldogs
-    Capture Page Screenshot
-    Sleep    3
-
-Open Google Test 2
-    Define Own Keyword In File
-    Search For French Toast
-    Sleep    3
-
-Open Google Test 3
-    [Tags]   CALC-3
-    Open Google Images
-    Search For French Fries
-    Fail  msg=Ooops something went wrong!
-    Sleep    3
 
 Use Custom Python Code
     ${upper_string} =    make upper    french bulldog
@@ -58,7 +37,3 @@ Reach Inner Object since release 3.1
     ${dictionary} =    Create Dictionary  mammal=${list_mammal}    bird=${list_birds}
     Log    ${dictionary}[bird]
     Log    ${dictionary}[mammal][1]
-
-*** Keywords ***
-Define Own Keyword In File
-    Run Keyword  Open Google Images
