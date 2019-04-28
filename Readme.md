@@ -12,7 +12,7 @@ To verify the installation:
 docker --version
 ```
 
-The API test need a key from [Openweathermap](https://openweathermap.org/appid) what you need to configure through the ./.env file.
+The API test need a key from [Openweathermap](https://openweathermap.org/appid) what you need to configure through the [./.env](.env) file.
 
 ```
 API_KEY_WEATHER=api_key_goes_here
@@ -38,12 +38,12 @@ docker-compose start
 
 EditorConfig helps maintain consistent coding style.
 
-./.editorconfig
+[./.editorconfig](.editorconfig)
 
-## Használt Technológiák
+## Used Technologies
 
-* [Docker](https://docker.com) - Konténerizáció
-* [Robotframework](https://robotframework.org) - Tesztframework
+* [Docker](https://docker.com)
+* [Robotframework](https://robotframework.org)
 * [EditorConfig](https://editorconfig.org)
 
 ## Author
