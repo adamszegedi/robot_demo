@@ -9,7 +9,7 @@ robotframework-seleniumlibrary = "*"
 robotframework-faker = "*"
 robotframework-requests = "*"
 requests = "*"
-pyyaml = "<=5"
+pyyaml = "*"
 
 [dev-packages]
 "flake8" = "*"
