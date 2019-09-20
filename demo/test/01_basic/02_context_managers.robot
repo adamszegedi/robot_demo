@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation     Context Managers Example
 Force Tags    context
-Resource    ${EXECDIR}/demo/resource/general.robot
+Resource    ${EXECDIR}/demo/resource/general.resource
 Suite Setup    Log To Console  ${\n} Suite Setup Message
 Test Setup    Log To Console  ${\n} Test Setup Message
 Test Teardown   Log To Console  ${\n} Test Teardown Message ${\n}

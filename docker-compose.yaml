@@ -1,29 +1,19 @@
 version: "3"
 
 services:
-  selenium-hub:
-    image: selenium/hub:3.141.59-neon
-    container_name: selenium-hub
-    ports:
-      - "4444:4444"
-
-  chrome:
-    image: selenium/node-chrome:3.141.59-neon
-    volumes:
-      - /dev/shm:/dev/shm
-    depends_on:
-      - selenium-hub
-    environment:
-      - HUB_HOST=selenium-hub
-      - HUB_PORT=4444
-
-  robot:
+  demo:
     build:
       context: ./
       dockerfile: Dockerfile
-    image: robot:latest
+    image: demo:latest
     volumes:
        - ./demo/log:/app/demo/log
-    depends_on:
-      - selenium-hub
-      - chrome
+    environment:
+      - FIZZ=${FIZZ}
+      - API_KEY_WEATHER=${API_KEY_WEATHER}
+      - REMOTE_URL=${REMOTE_URL}
+
+networks:
+  default:
+    external:
+      name: selenium_hub

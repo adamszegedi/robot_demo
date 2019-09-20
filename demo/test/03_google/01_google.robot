@@ -2,7 +2,7 @@
 Documentation     Open Google and Wait just for testing purpose.
 
 Force Tags    google
-Resource    ${EXECDIR}/demo/resource/general.robot
+Resource    ${EXECDIR}/demo/resource/general.resource
 Suite Setup    Test Execution Setup
 Suite Teardown    Close Browser
 
@@ -15,7 +15,7 @@ Open Google Test 1
     Sleep    3
 
 Open Google Test 2
-    Define Own Keyword In File
+    Open Google Images
     Search For French Toast
     Capture Page Screenshot
     Sleep    3
@@ -27,7 +27,3 @@ Open Google Test 3
     Capture Page Screenshot
     Run Keyword And Expect Error  Ooops something went wrong!  Fail  msg=Ooops something went wrong!
     Sleep    3
-
-*** Keywords ***
-Define Own Keyword In File
-    Open Google Images

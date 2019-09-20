@@ -6,14 +6,12 @@ clean:
 
 .Phony: run
 run:
-	pipenv run robot --outputdir ./demo/log --include $(TAGS) ./    \
+	poetry run robot --outputdir ./demo/log --include $(TAGS) ./    \
 
 .Phony: run-all
 run-all:
-	pipenv run robot --outputdir ./demo/log --xunit xunit.xml ./    \
+	poetry run robot --outputdir ./demo/log --xunit xunit.xml ./    \
 
 .Phony: install
 install:
-	pipenv --rm;    \
-	pipenv install;    \
-
+	poetry install --no-dev;    \

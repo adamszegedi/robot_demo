@@ -1,4 +1,3 @@
-*.html
-*.xml
-*.png
-*.json
+demo/log/*
+**/__pycache__
+.vscode/*
