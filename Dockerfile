@@ -1,9 +1,6 @@
-FROM python:3.7.3
+FROM python:3.11.4
 WORKDIR /app
-RUN python -m pip install poetry
 COPY ./Makefile /app/Makefile
-COPY ./poetry.lock /app/
-COPY ./pyproject.toml /app/
-RUN make install
+RUN python -m pip install requirements.txt
 COPY ./demo /app/demo
-CMD make run-all
+RUN python run.py

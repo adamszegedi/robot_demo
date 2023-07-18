@@ -1,14 +1,17 @@
 *** Settings ***
-Documentation     Open Google and Wait just for testing purpose.
+Documentation       Open Google and Wait just for testing purpose.
 
-Force Tags    google
-Resource    ${EXECDIR}/demo/resource/general.resource
-Suite Setup    Test Execution Setup
-Suite Teardown    Close Browser
+Resource            ${EXECDIR}/demo/resource/general.resource
+
+Test Setup          Test Execution Setup
+Test Teardown       Close Browser
+
+Force Tags          google
+
 
 *** Test Cases ***
 Open Google Test 1
-    [Tags]    TAG-1    TAG-2
+    [Tags]    tag-1    tag-2
     Open Google Images
     Search For French Bulldogs
     Capture Page Screenshot
@@ -21,9 +24,9 @@ Open Google Test 2
     Sleep    3
 
 Open Google Test 3
-    [Tags]   TAG-3
+    [Tags]    tag-3
     Open Google Images
     Search For French Fries
     Capture Page Screenshot
-    Run Keyword And Expect Error  Ooops something went wrong!  Fail  msg=Ooops something went wrong!
+    Run Keyword And Expect Error    Ooops something went wrong!    Fail    msg=Ooops something went wrong!
     Sleep    3

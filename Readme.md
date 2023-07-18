@@ -24,23 +24,21 @@ API_KEY_WEATHER=api_key_goes_here
 
 ### Locally
 In order the run test on your local machine you need to:
-- Install [python^3.7](https://www.python.org/downloads/)
-- Install [Poetry](https://poetry.eustace.io/docs/#installation)
+- Install [python^3.11.4](https://www.python.org/downloads/)
 - Add [Chromedriver](https://chromedriver.chromium.org/getting-started) to Path.
 
-Then from the root folder of the repository install dependencies (poetry will create a
+Then from the root folder of the repository install dependencies inside a 
 [virtualenviroment](https://docs.python.org/3/tutorial/venv.html) in order to not to mess with the system installed python):
 
 ```
->poetry install
-Installing dependencies from lock file
+> python -m venv .venv
 ```
 
 From the [.env](./.env) file remove REMOTE_URL value, but just the value you must leave the key in the file!
 
-Then run the run.py script via poetry after a while you will see chrome to flicker on your screen:
+Then run the run.py script:
 ```
->poetry run python run.py
+>python run.py
 ```
 Log files will be created under ./demo/log
 
