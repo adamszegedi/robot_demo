@@ -1,8 +1,11 @@
 *** Settings ***
-Documentation     Get Weatherapi requests
-Force Tags    api
-Resource    ${EXECDIR}/demo/resource/general.resource
-Variables    variables.yaml
+Documentation       Get Weatherapi requests
+
+Resource            ${CURDIR}/../../resource/general.resource
+Variables           variables.yaml
+
+Force Tags          api
+
 
 *** Test Cases ***
 Test Case Budapest

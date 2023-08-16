@@ -1,7 +1,7 @@
 *** Settings ***
 Documentation       Basic Usage Examples
 
-Resource            ${EXECDIR}/demo/resource/general.resource
+Resource            ${CURDIR}/../../resource/general.resource
 Library             OperatingSystem
 Library             FakerLibrary
 
@@ -18,8 +18,8 @@ Create New Keywords Based on Your Previous Ones
 
 Get enviroment variable is easy
     [Tags]    enviroment
-    ${variable} =    Get Environment Variable    FIZZ
-    Log    ${variable}
+    ${variables} =    Get Environment Variables
+    Log    ${variables}
 
 New For Loop Concept Since release 3.1
     [Tags]    for

@@ -4,6 +4,5 @@ COPY ./Makefile /app/Makefile
 COPY ./requirements.txt /app/requirements.txt
 RUN python -m pip install -r requirements.txt
 COPY ./demo /app/demo
-RUN make run-all
 
 
