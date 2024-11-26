@@ -16,4 +16,5 @@ Test Execution Setup
     ...    Open Browser
     ...    ${BASE_URL}
     ...    browser=chrome
+    ...    remote_url=http://localhost:4444/wd/hub
     Click Element    //*[text()="Az összes elfogadása"]

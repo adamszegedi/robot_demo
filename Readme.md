@@ -22,35 +22,47 @@ API_KEY_WEATHER=api_key_goes_here
 ## Run Test
 
 ### Locally
-In order the run test on your local machine you need to:
-- Install [python^3.11.4](https://www.python.org/downloads/)
 
-Then from the root folder of the repository install dependencies inside a 
-[virtualenviroment](https://docs.python.org/3/tutorial/venv.html) in order to not to mess with the system installed python):
+You can use the justfile to run a copule of preconfigured commands to create a working environment with podman.
 
 ```
-> python -m venv .venv
+$ just -l
+Available recipes:
+    add-selenium-standalone
+    build
+    clean
+    create-pod
+    run
+    run-interactively
 ```
 
-Activate the newly created virtualenvironment
+* Create the testing environment
 
-| Type   |      Command      |
-| ---    |      ---          |
-| POSIX       | `> source .venv/bin/activate` |
-| PowerShell  | `> .venv/bin/Activate.ps1` |
-| cmd.exe     | `C:\> .venv\Scripts\activate.bat` |
-
-
-Install packages    
 ```
-> pip install -r requirements.txt
+$ just create-pod
+
+$ just add-selenium-standalone
 ```
 
-Then run the run.py script:
+* Build the robotframework runner container
+
 ```
->python run.py
+$ just build
 ```
-Log files will be created under ./demo/log
+
+* You can start the testing enviroment in an interactive shell.
+
+```
+$ just run-interactively
+
+$ python3 run.py
+```
+
+Or run it automatically
+
+```
+$ just run
+```
 
 ## Congartualations you have successfully executed you first Robotframework tests! :clap:
 
@@ -64,6 +76,8 @@ EditorConfig helps maintain consistent coding style.
 
 * [Robotframework](https://robotframework.org)
 * [EditorConfig](https://editorconfig.org)
+* [Podman](https://podman.io/)
+* [Just](https://github.com/casey/just)
 
 ## Author
 

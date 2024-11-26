@@ -4,5 +4,5 @@ from dotenv import load_dotenv
 import subprocess
 
 load_dotenv()
-subprocess.run(["robot", "--outputdir", "./demo/log", "--xunit", "xunit.xml", "./"])
+subprocess.run(["robot", "--outputdir", "./log", "--xunit", "xunit.xml", "./"])
 

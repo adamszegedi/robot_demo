@@ -1,8 +1,17 @@
-FROM python:3.11.4
+FROM docker.io/python:3.13-slim
+
+RUN apt update && pip install --upgrade pip setuptools
+
 WORKDIR /app
-COPY ./Makefile /app/Makefile
-COPY ./requirements.txt /app/requirements.txt
+
+COPY requirements.txt ./requirements.txt
+
 RUN python -m pip install -r requirements.txt
-COPY ./demo /app/demo
+
+COPY ./demo ./demo
+COPY ./.env ./.env
+COPY run.py ./
+
+CMD python3 ./run.py
 
 
